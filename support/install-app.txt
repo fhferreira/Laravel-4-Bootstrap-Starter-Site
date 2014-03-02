@@ -42,6 +42,3 @@ Repo in github -> https://github.com/fhferreira/Laravel-4-Bootstrap-Starter-Site
 		    ServerName localhost
 		    DocumentRoot "C:/wamp/www"
 		</VirtualHost>
-
-		
-
