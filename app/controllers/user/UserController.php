@@ -318,6 +318,25 @@ class UserController extends BaseController {
 
         return View::make('site/user/profile', compact('user'));
     }
+    
+    /**
+     * Get user's profile
+     * @param $username
+     * @return mixed
+     */
+    public function getShowProfile($username)
+    {
+        $userModel = new User;
+        $user = $userModel->getUserByUsername($username);
+
+        // Check if the user exists
+        if (is_null($user))
+        {
+            return App::abort(404);
+        }
+
+        return View::make('site/user/showprofile', compact('user'));
+    }
 
     public function getSettings()
     {

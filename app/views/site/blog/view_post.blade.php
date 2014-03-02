@@ -48,7 +48,7 @@
 	<div class="col-md-11">
 		<div class="row">
 			<div class="col-md-11">
-				<span class="muted">{{{ $comment->author->username }}}</span>
+				<span class="muted"><a href='{{ URL::to('user/show/' . $comment->author->username ) }}'>{{{ $comment->author->username }}}</a></span>
 				&bull;
 				{{{ $comment->date() }}}
 			</div>
