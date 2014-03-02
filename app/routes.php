@@ -15,20 +15,20 @@
  *  Route model binding
  *  ------------------------------------------
  */
-Route::model('user', 'User');
+Route::model('user'   , 'User');
 Route::model('comment', 'Comment');
-Route::model('post', 'Post');
-Route::model('role', 'Role');
+Route::model('post'   , 'Post');
+Route::model('role'   , 'Role');
 
 /** ------------------------------------------
  *  Route constraint patterns
  *  ------------------------------------------
  */
 Route::pattern('comment', '[0-9]+');
-Route::pattern('post', '[0-9]+');
-Route::pattern('user', '[0-9]+');
-Route::pattern('role', '[0-9]+');
-Route::pattern('token', '[0-9a-z]+');
+Route::pattern('post'   , '[0-9]+');
+Route::pattern('user'   , '[0-9]+');
+Route::pattern('role'   , '[0-9]+');
+Route::pattern('token'  , '[0-9a-z]+');
 
 /** ------------------------------------------
  *  Admin Routes
@@ -108,4 +108,4 @@ Route::get('{postSlug}', 'BlogController@getView');
 Route::post('{postSlug}', 'BlogController@postView');
 
 # Index Page - Last route, no matches
-Route::get('/', array('before' => 'detectLang','uses' => 'BlogController@getIndex'));
+Route::get('/', array('before' => 'detectLang','uses' => 'MatchController@getIndex'));

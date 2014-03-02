@@ -13,7 +13,11 @@
             {
                 "type": "vcs",
                 "url": "https://github.com/Zizaco/ardent.git"
-            }
+            },
+             {
+		        "type":"vcs",
+		        "url": "https://github.com/Marwelln/basset"
+		    }
         ],
 	"require": {
 		"laravel/framework": "4.1.*",

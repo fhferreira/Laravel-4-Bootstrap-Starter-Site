@@ -1,0 +1,47 @@
+Project: MatchStat
+Repo in github -> https://github.com/fhferreira/Laravel-4-Bootstrap-Starter-Site
+
+1  - Create directory - c:/wamp/www/Laravel-4-Bootstrap-Starter-Site
+2  - git clone https://github.com/fhferreira/Laravel-4-Bootstrap-Starter-Site.git c:/wamp/www/Laravel-4-Bootstrap-Starter-Site
+3  - Open Localhost server mysql -> "CREATE DATABASE `name_of_project`CHARACTER SET utf8 COLLATE utf8_unicode_ci;" I am used this name: "mvp_matchstat"
+4  - Change file app/config/database.php with name of database "mvp_matchstat"
+4  - composer install
+5  - php artisan migrate
+6  - php artisan db:seed
+7  - php artisan key:generate
+8  - If Unix SO => chmod -R 775 public/assets/compiled
+9  - php artisan basset:build
+10 - Login
+     User: user  - Password: user
+     User: admin - Password: admin
+11 - Create virtual host into apache, i am choice name for domain local -> matchstat.local
+     my httpd-vhosts.conf and change 
+
+		NameVirtualHost 127.0.0.1
+
+		<Directory />
+		    #Options FollowSymLinks
+		    Options Indexes FollowSymLinks Includes ExecCGI
+		    AllowOverride All
+		    Order deny,allow
+		    Allow from all
+		</Directory>
+
+		<VirtualHost 127.0.0.1>
+		    ServerName dotproject_ml.local
+		    DocumentRoot "C:/wamp/www/dotproject_ml"
+		</VirtualHost>
+
+		<VirtualHost 127.0.0.1>
+		    ServerName matchstat.local
+		    DocumentRoot "C:/wamp/www/Laravel-4-Bootstrap-Starter-Site/public"
+		</VirtualHost>
+
+		#<VirtualHost localhost:80>
+		<VirtualHost 127.0.0.1>
+		    ServerName localhost
+		    DocumentRoot "C:/wamp/www"
+		</VirtualHost>
+
+		
+
